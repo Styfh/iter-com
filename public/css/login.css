@@ -1,0 +1,143 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+    --primary: #59CDFF;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+}
+
+main .login-form-container{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .login-form-container .content{
+    width: 70%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4%;
+    flex-direction: column;
+}
+
+main .login-form-container .content h1{
+    font-size: 3rem;
+    text-align: left;
+    color: rgba(0,0,0,0.6);
+}
+
+main .login-form-container .content h1 .login-word{
+  color: #59CDFF;
+}
+
+main .login-form-container .content .container{
+    width: 100%;
+    height: 60%;
+}
+
+main .login-form-container .content .container form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  flex-direction: column;
+}
+
+main .login-form-container .content .container form .userdata{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+main .login-form-container .content .container form .userdata .userinputdata{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+main .login-form-container .content .container form .userdata .userinputdata .details{
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+main .login-form-container .content .container form .userdata .userinputdata input{
+  width: 100%;
+  height: 4rem;
+  padding: 0 5%;
+  font-size: 1.2rem;
+  outline: none;
+  border: 4px solid #59CDFF;
+  border-radius: 50px;
+}
+
+main .login-form-container .content .container form .button{
+  width: 12rem;
+  height: 18%;
+  background: linear-gradient(-45deg, #89cffd, #68ffc0, rgb(255, 194, 26));
+  background-size: 200% 200%;
+  background-position: 0 0;
+  font-size: 1.8rem;
+  outline: none;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer; 
+}
+
+main .login-form-container .content .container form .button:hover {
+  background-position: 100% 100%;
+  /* background: linear-gradient(100deg, #68ffc0, #89cffd); */
+}
+
+main .login-picture-container{
+  height: 100vh;
+}
+
+main .login-picture{
+  height: 100vh;
+}
+
+main .login-form-container .content .register{
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+main .login-form-container .content .register #register-link{
+  text-decoration: none;
+  color: var(--primary);
+}
+
+/* .register{
+    font-size: 1.3rem;
+    align-self: center;
+}
+
+.register a{
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary);
+} */
