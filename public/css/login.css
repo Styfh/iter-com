@@ -1,143 +1,271 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-:root{
-    --primary: #59CDFF;
+:root {
+  --primary: #59cdff;
 }
 
-main{
-    display: flex;
-    justify-content: space-between;
+html {
+  font-family: "Montserrat", sans-serif;
 }
 
-main .login-form-container{
-    position: relative;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#blue {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--primary);
 }
 
-main .login-form-container .content{
-    width: 70%;
-    height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 4%;
-    flex-direction: column;
-}
-
-main .login-form-container .content h1{
-    font-size: 3rem;
-    text-align: left;
-    color: rgba(0,0,0,0.6);
-}
-
-main .login-form-container .content h1 .login-word{
-  color: #59CDFF;
-}
-
-main .login-form-container .content .container{
-    width: 100%;
-    height: 60%;
-}
-
-main .login-form-container .content .container form{
-  width: 100%;
-  height: 100%;
+main {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
+}
+
+main > div {
+  width: 50%;
+  height: 100%;
+}
+
+.form {
+  padding: 2.5% 10% 2% 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-direction: column;
 }
 
-main .login-form-container .content .container form .userdata{
+.form__logo {
+  position: relative;
+  left: -1.5rem;
+}
+
+.form__logo svg {
   width: 100%;
-  height: 80%;
+}
+
+.form__input {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.form__input h1 {
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: #b4b4b4;
+}
+
+.form__input form {
+  height: 70%;
+  padding-left: 3%;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-direction: column;
 }
 
-main .login-form-container .content .container form .userdata .userinputdata{
+.form__username,
+.form__password {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items:flex-start;
-  gap: 0.5rem;
+  align-items: flex-start;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
-main .login-form-container .content .container form .userdata .userinputdata .details{
+.form__input__label {
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-main .login-form-container .content .container form .userdata .userinputdata input{
+.form__input__field {
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
   padding: 0 5%;
-  font-size: 1.2rem;
-  outline: none;
-  border: 4px solid #59CDFF;
+  border: 3px solid var(--primary);
   border-radius: 50px;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
 }
 
-main .login-form-container .content .container form .button{
-  width: 12rem;
-  height: 18%;
-  background: linear-gradient(-45deg, #89cffd, #68ffc0, rgb(255, 194, 26));
-  background-size: 200% 200%;
-  background-position: 0 0;
-  font-size: 1.8rem;
-  outline: none;
+.form__remember {
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
+}
+
+#remember {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+#submit {
+  width: 10rem;
+  height: 4.166875rem;
+  align-self: center;
+  background: var(--primary);
+  font-size: 1.7rem;
+  font-weight: 500;
   color: white;
+  outline: none;
   border: none;
   border-radius: 50px;
-  transition: all 250ms ease-in-out;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-main .login-form-container .content .container form .button:hover {
-  background-position: 100% 100%;
-  /* background: linear-gradient(100deg, #68ffc0, #89cffd); */
+.form__register {
+  align-self: center;
 }
 
-main .login-picture-container{
-  height: 100vh;
+.form__register h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
-main .login-picture{
-  height: 100vh;
+.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
 }
 
-main .login-form-container .content .register{
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2rem;
-  font-weight: bold;
+#image--desktop {
+  width: 100%;
 }
 
-main .login-form-container .content .register #register-link{
-  text-decoration: none;
-  color: var(--primary);
+#image--mobile {
+  display: none;
 }
 
-/* .register{
-    font-size: 1.3rem;
-    align-self: center;
+/* Large - 1600, 1536, 1440 */
+@media only screen and (max-width: 100em) {
+  .form__input h1 {
+    font-size: 1.85rem;
+  }
 }
 
-.register a{
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--primary);
-} */
+/* Medium - 1366, 1280*/
+@media only screen and (max-width: 85.375em) {
+  .form {
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+  .form__logo {
+    width: 35%;
+  }
+  .form__input h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Small - 1024x768 */
+@media only screen and (max-width: 64em) {
+  .form {
+    width: 55%;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+  }
+  .form__input h1 {
+    font-size: 1.7rem;
+  }
+  .form__input__label {
+    font-size: 1.6rem;
+  }
+  .form__input__field {
+    height: 3rem;
+  }
+  .form__register h2 {
+    font-size: 1.1rem;
+  }
+  .image {
+    width: 45%;
+  }
+}
+
+/* Tablet - 768x1024 */
+@media only screen and (max-width: 48em) {
+  body {
+    overflow: hidden;
+  }
+  .form {
+    width: 100%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .form__input h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: black;
+  }
+  .form__input__label,
+  #remember {
+    font-weight: 700;
+  }
+  #remember {
+    font-size: 1.5rem;
+  }
+  #form__remember__input {
+    transform: scale(1.75);
+  }
+  .form__register h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .image {
+    display: none;
+  }
+  #image--mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    z-index: -1;
+  }
+}
+
+/* Phone - 360x640 */
+@media only screen and (max-width: 26.5625em) {
+  .form {
+    padding: 15% 9%;
+  }
+  .form__logo {
+    left: -0.5rem;
+  }
+  .form__input h1 {
+    font-size: 1.125rem;
+  }
+  .form__input__label {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  #remember {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  #form__remember__input {
+    transform: scale(1.2);
+  }
+  #submit {
+    width: 6.62rem;
+    height: 2.76rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .form__register h2 {
+    font-size: 0.85rem;
+  }
+}

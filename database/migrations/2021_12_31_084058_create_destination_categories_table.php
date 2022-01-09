@@ -14,7 +14,21 @@ class CreateDestinationCategoriesTable extends Migration
     public function up()
     {
         Schema::create('destination_categories', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('destination_id');
+            $table->unsignedBigInteger('category_id');
+
+            $table->foreign('destination_id')
+                ->references('id')
+                ->on('destinations')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

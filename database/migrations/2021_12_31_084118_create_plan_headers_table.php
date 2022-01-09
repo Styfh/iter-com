@@ -24,7 +24,7 @@ class CreatePlanHeadersTable extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-        });
+            });
     }
 
     /**

@@ -1,5 +1,4 @@
 @extends('layout.master')
-@extends('layout.navbar')
 
 @section('title')
     <title>Iter | Dashboard</title>
@@ -10,37 +9,130 @@
 @endsection
 
 @section('section')
-<main>
+  <nav>
+      <ul>
+        <li>
+          <a href=""
+            ><img src="{{ url('/assets/icons/home-icon.png')}}" alt="home icon" />
+            <p id="nav__links__text">Home</p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><img src="{{ url('/assets/icons/saved-plans-icon.png')}}" alt="home icon" />
+            <p id="nav__links__text">Saved</p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><img src="{{ url('/assets/icons/logout-icon.png')}}" alt="home icon" />
+            <p id="nav__links__text">Logout</p></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main>
       <div class="dashboard">
         <div class="card dashboard__recommendations">
           <div class="dashboard__header">
             <h2 class="dashboard__title">Recommendations</h2>
             <h4 class="dashboard__subtitle">last updated 25m ago</h3>
           </div>
+
           <div class="dashboard__recommendations__list">
             <div class="dashboard__recommendations__list__item"></div>
             <div class="dashboard__recommendations__list__item"></div>
             <div class="dashboard__recommendations__list__item"></div>
           </div>
         </div>
+
         <div class="card dashboard__categories">
             <div class="dashboard__header">
                 <h2 class="dashboard__title">Categories</h2>
                 <h4 class="dashboard__subtitle">last updated 20s ago</h3>
             </div>
             <div class="dashboard__categories__list">
-              <div class="dashboard__list__category dashboard__list__category--1"><p>Cat 1</p></div>
-              <div class="dashboard__list__category dashboard__list__category--2"><p>Cat 2</p></div>
-              <div class="dashboard__list__category dashboard__list__category--3"><p>Cat 3</p></div>
-              <div class="dashboard__list__category dashboard__list__category--4"><p>Cat 4</p></div>
-              <div class="dashboard__list__category dashboard__list__category--5"><p>Cat 5</p></div>
-              <div class="dashboard__list__category dashboard__list__category--6"><p>Cat 6</p></div>
-              <div class="dashboard__list__category dashboard__list__category--7"><p>Cat 7</p></div>
-              <div class="dashboard__list__category dashboard__list__category--8"><p>Cat 8</p></div>
-              <div class="dashboard__list__category dashboard__list__category--9"><p>Cat 9</p></div>
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+              
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
+
+              <form class="dashboard__categories__container">
+                <div class="dashboard__categories__category">
+                  Cat 1
+                  <input type="submit" class="dashboard__categories__category__button">
+                </div>
+              </form>
             </div>
-            <button class="dashboard__categories__list__button">Add new category <img src="./icons/plus.svg" alt="plus icon"></button>
+            <button class="dashboard__categories__list__button">Add new category <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.0002 15.9166H5.3335M16.0002 26.1389V15.9166V26.1389ZM16.0002 15.9166V5.69443V15.9166ZM16.0002 15.9166H26.6668H16.0002Z" stroke="white" stroke-width="1.33333" stroke-linecap="round"/></svg></button>
         </div>
+
         <div class="card dashboard__plan">
           <div class="dashboard__header">
             <h2 class="dashboard__title">Your Travel Plan</h2>
@@ -64,8 +156,11 @@
             <div class="dashboard__plans__list__plan">Destination 15</div>
             <div class="dashboard__plans__list__plan">Destination 16</div>
           </div>
-          <button class="dashboard__plans__list__button">Save <img src="./icons/plus.svg" alt="plus icon"></button>
+          <button class="dashboard__plans__list__button">Save <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.0002 15.9166H5.3335M16.0002 26.1389V15.9166V26.1389ZM16.0002 15.9166V5.69443V15.9166ZM16.0002 15.9166H26.6668H16.0002Z" stroke="white" stroke-width="1.33333" stroke-linecap="round"/></svg></button>
         </div>
+      </div>
+      <div class="add-category">
+        
       </div>
     </main>
 @endsection

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Destination extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "name", 
+        "image_path"
+    ];
+
+    public function destinationCategory(){
+        return $this->hasMany(DestinationCategory::class);
+    }
 }
