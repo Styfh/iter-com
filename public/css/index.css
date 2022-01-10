@@ -119,7 +119,11 @@ main .dashboard {
   width: 100%;
   height: 16rem;
   margin-bottom: 1rem;
-  background: lightgrey;
+}
+
+.dashboard__recommendations__list__item img{
+  width: 100%;
+  height: 100%;
 }
 
 .dashboard__categories {
@@ -136,19 +140,24 @@ main .dashboard {
   flex-direction: column;
 }
 
-.dashboard__categories__list {
+.dashboard__categories__grid__container {
   width: 98%;
   height: 15rem;
+  overflow: scroll;
+}
+
+.dashboard__categories__grid__container::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard__categories__list {
+  width: 100%;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(4, 23%);
+  grid-auto-rows: 5rem;
   place-items: center;
   grid-gap: 1%;
-  overflow-y: scroll;
-}
-
-.dashboard__categories__list::-webkit-scrollbar {
-  display: none;
 }
 
 .dashboard__categories__container {
@@ -180,18 +189,17 @@ main .dashboard {
   transition: all 150ms ease-in-out;
 }
 
-.dashboard__categories__category:hover::before,
-.dashboard__categories__category:hover::after{
+.dashboard__categories__category:hover::before, 
+.dashboard__categories__category:hover .dashboard__categories__delete__icon{
   opacity: 1;
 }
 
-.dashboard__categories__category::after{
-  content: "";
+.dashboard__categories__delete__icon{
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
-  width: 1.75rem;
-  height: 1.75rem;
-  background-image: url("./assets/delete-icon.svg");
 }
 
 .dashboard__categories__category__button{
@@ -273,6 +281,25 @@ main .dashboard {
   border-radius: 50px;
   box-shadow: 0 0 25px 0 rgba(89, 205, 255, 0.75);
   cursor: pointer;
+}
+
+.add-category__card{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 50vh;
+  background: white;
+}
+
+.add-category__overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
 }
 
 /* Large - 1600, 1536, 1440 */

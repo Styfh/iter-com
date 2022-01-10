@@ -26,3 +26,5 @@ Route::get('/register', [UserController::class, 'getRegisterPage']);
 Route::post('/register', [UserController::class, 'register']);
 
 Route::get('/preferences', [UserController::class, 'getPreferencesPage']);
+
+Route::get('/saved', [UserController::class, 'getSavedPage']);

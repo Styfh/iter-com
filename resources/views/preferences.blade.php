@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-    <title>Iter | Login</title>
+    <title>Iter | Preferences</title>
 @endsection
 
 @section('style')

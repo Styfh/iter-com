@@ -52,7 +52,7 @@
             Welcome Back! Please <span id="blue" href="#">Login</span><br />To
             Your Account.
           </h1>
-          <form action="/login" method="post">
+          <form action="/login" method="POST">
             @csrf
             <div class="form__username">
               <label for="username" class="form__input__label">Username</label>
@@ -64,7 +64,7 @@
             </div>
 
             <div class="form__remember">
-              <input type="checkbox" id="form__remember__input" />
+              <input type="checkbox" id="form__remember__input" name="remember"/>
               <label for="remember" id="remember" class="form__input__label"
                 >Remember me</label
               >

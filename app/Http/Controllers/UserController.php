@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -24,6 +25,10 @@ class UserController extends Controller
         return view('preferences', 
             ['categories' => $categories]);
 
+    }
+
+    public function getSavedPage(){
+        return view('saved');
     }
 
     public function register(Request $request){
@@ -49,7 +54,15 @@ class UserController extends Controller
 
     public function login(Request $request){
 
+        if(Auth::attempt([
+            "username" => $request->username,
+            "password" => $request->password,
+        ], $request->remember)){
+            return redirect('/');
+        }
 
+        return redirect()->back();
+        
     }
 
 }
