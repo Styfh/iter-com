@@ -6,6 +6,10 @@
 
 @section('style')
     <link rel="stylesheet" href="{{asset('css/saved.css')}}">
+
+    <style>
+      
+    </style>
 @endsection
 
 @section('section')

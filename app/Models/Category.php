@@ -14,6 +14,10 @@ class Category extends Model
     ];
 
     public function destinationCategory(){
-        return $this->hasMany(DestinationCategory::class, "category_id", "id");
+        return $this->hasMany(DestinationCategory::class);
+    }
+
+    public function userCategory(){
+        return $this->hasMany(UserCategory::class);
     }
 }

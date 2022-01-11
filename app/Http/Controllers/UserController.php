@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\User;
+use App\Models\UserCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,17 +19,12 @@ class UserController extends Controller
         return view('register');
     }
 
-    public function getPreferencesPage(){
-
-        $categories = Category::all();
-
-        return view('preferences', 
-            ['categories' => $categories]);
-
-    }
-
     public function getSavedPage(){
         return view('saved');
+    }
+
+    public function getSavedDetailPage(){
+        return view('saved_detail');
     }
 
     public function register(Request $request){
@@ -58,8 +54,20 @@ class UserController extends Controller
             "username" => $request->username,
             "password" => $request->password,
         ], $request->remember)){
+
+            $user_id = auth()->user()->id;
+
+            $user_categories = UserCategory::where('user_id', $user_id)->get();
+
+            // dd($user_categories);
+
+            if($user_categories->isEmpty()){
+                return redirect('/preferences/'.$user_id);
+            }
+
             return redirect('/');
         }
+
 
         return redirect()->back();
         

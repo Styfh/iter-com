@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PreferenceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,14 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'getIndexPage']);
 
-Route::get('/login', [UserController::class, 'getLoginPage']);
 
+Route::get('/login', [UserController::class, 'getLoginPage']);
 Route::post('/login', [UserController::class, 'login']);
 
 Route::get('/register', [UserController::class, 'getRegisterPage']);
-
 Route::post('/register', [UserController::class, 'register']);
 
-Route::get('/preferences', [UserController::class, 'getPreferencesPage']);
+Route::get('/preferences/{id}', [PreferenceController::class, 'getPreferencesPage']);
+Route::post('/preferences', [PreferenceController::class, 'addPreference']);
+Route::delete('/preferences/{id}/{category_id}', [PreferenceController::class, 'deletePreference']);
 
 Route::get('/saved', [UserController::class, 'getSavedPage']);
+Route::get('/saved/{id}', [UserController::class, 'getSavedDetailPage']);

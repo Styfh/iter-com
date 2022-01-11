@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function planHeader(){
         return $this->hasMany(Planheader::class);
     }
+
+    public function userCategory(){
+        return $this->hasMany(UserCategory::class);
+    }
 }
