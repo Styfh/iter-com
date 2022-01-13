@@ -30,15 +30,15 @@
 
     <section class="choosen">
         @foreach($user_categories as $category)
-            <form class="choosen__preference__container"
-                action="/preferences/{{ Auth::user()->id }}/{{ $category->id }}" method="POST">
+            <form class="choosen__preference__container" action="/preferences/{{ Auth::user()->id }}/{{ $category->category_id }}" method="POST">
+                @csrf
+                @method('DELETE')
                 <div class="choosen__preference">
-                    {{ $category->category()->category_name }}
+                    {{ $category->getCategory->category_name }}
                     <input type="submit" class="choosen__preference__button">
                 </div>
             </form>
         @endforeach
-        </div>
     </section>
 
     <a class="continue" id="continue" href="../Dashboard/dashboard.html">

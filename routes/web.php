@@ -27,7 +27,7 @@ Route::post('/register', [UserController::class, 'register']);
 
 Route::get('/preferences/{id}', [PreferenceController::class, 'getPreferencesPage']);
 Route::post('/preferences', [PreferenceController::class, 'addPreference']);
-Route::delete('/preferences/{id}/{category_id}', [PreferenceController::class, 'deletePreference']);
+Route::delete('/preferences/{user_id}/{category_id}', [PreferenceController::class, 'deletePreference']);
 
 Route::get('/saved', [UserController::class, 'getSavedPage']);
 Route::get('/saved/{id}', [UserController::class, 'getSavedDetailPage']);

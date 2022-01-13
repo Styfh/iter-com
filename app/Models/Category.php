@@ -10,6 +10,7 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
+        "id",
         "category_name"
     ];
 
@@ -17,7 +18,7 @@ class Category extends Model
         return $this->hasMany(DestinationCategory::class);
     }
 
-    public function userCategory(){
+    public function getUserCategory(){
         return $this->hasMany(UserCategory::class);
     }
 }

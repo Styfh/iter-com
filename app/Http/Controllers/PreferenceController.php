@@ -14,12 +14,9 @@ class PreferenceController extends Controller
 
         $categories = Category::all();
         
-        $uid = $request->id;
-        $user_categories = UserCategory::where(['user_id' => $uid]);
-        
-        dd($user_categories->category());
-
-        $name = $user_categories->category()->category_name;
+        $user_categories = UserCategory::with("getCategory")
+            ->where("user_id", $request->id)
+            ->get();
         
         return view('preferences', 
             ['categories' => $categories],
@@ -44,6 +41,16 @@ class PreferenceController extends Controller
 
         $new_uc->save();
         
+        return redirect()->back();
+    }
+
+    public function deletePreference(Request $request){
+        
+        $to_delete = UserCategory::where("user_id", $request->user_id)
+            ->where("category_id", $request->category_id);
+
+        $to_delete->delete();
+
         return redirect()->back();
     }
 
