@@ -14,7 +14,6 @@ class CreateUserCategoriesTable extends Migration
     public function up()
     {
         Schema::create('user_categories', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("category_id");
             $table->timestamps();

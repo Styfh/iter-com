@@ -41,7 +41,7 @@
         @endforeach
     </section>
 
-    <a class="continue" id="continue" href="../Dashboard/dashboard.html">
+    <a class="continue" id="continue" href="/">
         continue >>
     </a>
 </main>

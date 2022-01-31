@@ -1,4 +1,5 @@
 @extends('layout.master')
+@extends('layout.navbar')
 
 @section('title')
     <title>Iter | Saved Plans</title>
@@ -13,28 +14,6 @@
 @endsection
 
 @section('section')
-<nav>
-      <ul>
-        <li>
-          <a href=""
-            ><img src="{{ url('/assets/icons/home-icon.png')}}" alt="" />
-            <p id="nav__links__text">Home</p></a
-          >
-        </li>
-        <li>
-          <a href=""
-            ><img src="{{ url('/assets/icons/saved-plans-icon.png')}}" alt="" />
-            <p id="nav__links__text">Saved</p></a
-          >
-        </li>
-        <li>
-          <a href=""
-            ><img src="{{ url('/assets/icons/logout-icon.png')}}" alt="" />
-            <p id="nav__links__text">Logout</p></a
-          >
-        </li>
-      </ul>
-    </nav>
     <main>
       <div class="saved-plans__container">
         <h1 class="saved-plans__title">Saved Travel Plans</h1>
