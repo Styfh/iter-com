@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\PlanHeader;
 use App\Models\User;
 use App\Models\UserCategory;
 use Illuminate\Http\Request;
@@ -20,7 +21,18 @@ class UserController extends Controller
     }
 
     public function getSavedPage(){
-        return view('saved');
+        $user = Auth::user();
+
+        $user_plans = PlanHeader::with("getPlanDetail")
+            ->with('getDestinations')
+            ->where('user_id', $user->id)
+            ->get();
+
+        // dd($user_plans);
+
+        return view('saved', [
+            "plans" => $user_plans
+        ]);
     }
 
     public function getSavedDetailPage(){
@@ -71,6 +83,18 @@ class UserController extends Controller
 
         return redirect()->back();
         
+    }
+
+    public function logout(Request $request){
+
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+
     }
 
 }

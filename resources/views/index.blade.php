@@ -23,7 +23,9 @@
 
                 @foreach($destinations as $destination)
                     <div class="dashboard__recommendations__list__item">
-                        <img src="{{ url('place_images/'.$destination->image_path) }}" alt="">
+                        <a href="/destination/{{ $destination->id }}">
+                            <img src="{{ url('place_images/'.$destination->image_path) }}" alt="">
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -37,13 +39,12 @@
             <div class="dashboard__categories__grid__container">
                 <div class="dashboard__categories__list">
                     @foreach ($user_categories as $category)
-                    <form class="dashboard__categories__container">
-                        <div class="dashboard__categories__category">
-                            {{ $category->category_name }}
-                            <input type="submit" class="dashboard__categories__category__button">
-                            <img src="{{ url('/assets/icons/delete.svg') }}" alt=""
-                            class="dashboard__categories__delete__icon">
-                        </div>
+                    <form class="dashboard__categories__container" action="/delete_category/{{ $category->id }}" method = "POST">
+                        @csrf
+                        @method('DELETE')
+                        {{ $category->category_name }}
+                        <input type="submit" class="dashboard__categories__category__button">
+                        <img src="{{ url('/assets/icons/delete.svg') }}" alt="" class="dashboard__categories__delete__icon">
                     </form>
                     @endforeach
                 </div>

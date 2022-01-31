@@ -13,7 +13,7 @@
             </a>
         </li>
         <li>
-            <a href=""><img src="{{ url('/assets/icons/logout-icon.png') }}" alt="home icon" />
+            <a href="/logout"><img src="{{ url('/assets/icons/logout-icon.png') }}" alt="home icon" />
                 <p id="nav__links__text">Logout</p>
             </a>
         </li>

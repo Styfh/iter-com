@@ -38,6 +38,8 @@ class HomeController extends Controller
                 ->get();
                 
         if($request->session()->has('destinations')){
+            // dd(1);
+
             $curr_plan = session('destinations');
             $user_destinations = Destination::whereIn("id", $curr_plan)->get();
         }

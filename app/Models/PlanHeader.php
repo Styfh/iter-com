@@ -14,11 +14,11 @@ class PlanHeader extends Model
         "user_id"
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function getUser(){
+        return $this->belongsTo(User::class, "user_id", "id");
     }
 
-    public function planDetail(){
+    public function getPlanDetail(){
         return $this->hasMany(PlanDetail::class);
     }
 }

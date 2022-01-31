@@ -19,13 +19,16 @@ class CategoryController extends Controller
         return redirect()->back();
      }
  
-     public function deletePreference(Request $request){
+     public function deleteCategory(Request $request){
          
-        //  $to_delete = UserCategory::where("user_id", $request->user_id)
-        //      ->where("category_id", $request->category_id);
- 
-        //  $to_delete->delete();
- 
-        //  return redirect()->back();
+         $curr_categories = session('categories');
+         
+         $index = array_search($request->category_id, $curr_categories);
+         unset($curr_categories[$index]);
+
+         $curr_categories = array_values($curr_categories);
+         session(['categories' => $curr_categories]);
+
+         return redirect()->back();
      }
 }

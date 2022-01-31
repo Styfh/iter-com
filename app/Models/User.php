@@ -43,7 +43,7 @@ class User extends Authenticatable
     ];
 
     public function planHeader(){
-        return $this->hasMany(Planheader::class);
+        return $this->hasMany(PlanHeader::class);
     }
 
     public function userCategory(){

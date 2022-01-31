@@ -19,8 +19,8 @@ class PreferenceController extends Controller
             ->get();
         
         return view('preferences', 
-            ['categories' => $categories],
-            ['user_categories' => $user_categories]
+            ['categories' => $categories,
+            'user_categories' => $user_categories]
         );
 
 

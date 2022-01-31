@@ -14,11 +14,11 @@ class DestinationCategory extends Model
         "category_id"
     ];
 
-    public function destination(){
-        return $this->belongsTo(Destination::class);
+    public function getDestination(){
+        return $this->belongsTo(Destination::class, "destination_id", "id");
     }
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function getCategory(){
+        return $this->belongsTo(Category::class, "category_id", "id");
     }
 }

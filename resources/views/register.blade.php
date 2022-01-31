@@ -79,15 +79,15 @@
         </div>
 
         <div class="form__login">
-          <h2>Have an account? <a id="blue" href="#">Login here!</a></h2>
+          <h2>Have an account? <a id="blue" href="/login">Login here!</a></h2>
         </div>
       </div>
 
       <div class="image">
-        <img src="./assets/decorative picture.jpg" alt="" id="image--desktop" />
+        <img src="{{ asset('/assets/register-picture.jpg')}}" alt="" id="image--desktop" />
       </div>
       <img
-        src="./assets/decorative picture(mobile).jpg"
+        src="{{ asset('/assets/register-picture(mobile).jpg')}}"
         alt=""
         id="image--mobile"
       />

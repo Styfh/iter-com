@@ -14,7 +14,7 @@ class Destination extends Model
         "image_path"
     ];
 
-    public function destinationCategory(){
+    public function getDestinationCategory(){
         return $this->hasMany(DestinationCategory::class);
     }
 }

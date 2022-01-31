@@ -28,7 +28,7 @@
         <input type="submit" id="add" value="Add" />
     </form>
 
-    <section class="choosen">
+    <section class="choosen__grid">
         @foreach($user_categories as $category)
             <form class="choosen__preference__container" action="/preferences/{{ Auth::user()->id }}/{{ $category->category_id }}" method="POST">
                 @csrf
@@ -36,6 +36,7 @@
                 <div class="choosen__preference">
                     {{ $category->getCategory->category_name }}
                     <input type="submit" class="choosen__preference__button">
+                    <img src="{{ asset('/assets/icons/delete.svg') }}" alt="" class="choose__preference__icon">
                 </div>
             </form>
         @endforeach

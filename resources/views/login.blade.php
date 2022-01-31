@@ -75,16 +75,16 @@
     
         <div class="form__register">
           <h2>
-            Don't have an account? <a id="blue" href="#">Register here!</a>
+            Don't have an account? <a id="blue" href="/register">Register here!</a>
           </h2>
         </div>
       </div>
     
       <div class="image">
-        <img src="./assets/decorative picture.jpg" alt="" id="image--desktop" />
+        <img src="{{ asset('/assets/login-picture.jpg')}}" alt="" id="image--desktop" />
       </div>
       <img
-        src="./assets/decorative picture (mobile).jpg"
+        src="{{ asset('/assets/login-picture(mobile).jpg')}}"
         alt=""
         id="image--mobile"
       />

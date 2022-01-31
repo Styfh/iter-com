@@ -14,11 +14,11 @@ class PlanDetail extends Model
         "destination_id"
     ];
 
-    public function planHeader(){
-        return $this->belongsTo(PlanHeader::class);
+    public function getPlanHeader(){
+        return $this->belongsTo(PlanHeader::class, "plan_id", "id");
     }
 
-    public function destination(){
-        return $this->belongsTo(Destination::class);
+    public function getDestination(){
+        return $this->belongsTo(Destination::class, "destination_id", "id");
     }
 }

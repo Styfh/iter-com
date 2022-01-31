@@ -14,7 +14,7 @@ class UserCategory extends Model
         "category_id"
     ];
 
-    public function user(){
+    public function getUser(){
         return $this->belongsTo(User::class, "user_id", "id");
     }
 

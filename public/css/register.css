@@ -158,22 +158,6 @@ main > div {
   }
 }
 
-/* Height - <768 */
-@media only screen and (max-height: 43.75em) {
-  .form {
-    padding-top: 0.4%;
-    padding-bottom: 1%;
-    gap: 0;
-  }
-  .form__input__field {
-    height: 2.65rem;
-  }
-  #submit {
-    width: 10rem;
-    font-size: 1.4rem;
-  }
-}
-
 /* Medium - 1366, 1280*/
 @media only screen and (max-width: 85.375em) {
   .form {
@@ -206,6 +190,22 @@ main > div {
   }
   .image {
     width: 45%;
+  }
+}
+
+/* Height - <768 */
+@media only screen and (max-height: 43.75em) {
+  .form {
+    padding-top: 0.4%;
+    padding-bottom: 1%;
+    gap: 0;
+  }
+  .form__input__field {
+    height: 2.5rem;
+  }
+  #submit {
+    width: 10rem;
+    font-size: 1.4rem;
   }
 }
 
