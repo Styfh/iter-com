@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'getIndexPage']);
 Route::post('/add_category', [CategoryController::class, 'addCategory']);
 Route::delete('/delete_category/{category_id}', [CategoryController::class, 'deleteCategory']);
+Route::post('/save_plan', [PlanController::class, 'addPlan']);
 
 Route::get('/login', [UserController::class, 'getLoginPage']);
 Route::post('/login', [UserController::class, 'login']);

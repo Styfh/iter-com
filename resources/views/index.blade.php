@@ -70,11 +70,17 @@
             </div>
 
             @if(!empty($user_destinations))
-            <button class="dashboard__plans__list__button">Save <svg width="32" height="32" viewBox="0 0 32 32"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.0002 15.9166H5.3335M16.0002 26.1389V15.9166V26.1389ZM16.0002 15.9166V5.69443V15.9166ZM16.0002 15.9166H26.6668H16.0002Z"
-                        stroke="white" stroke-width="1.33333" stroke-linecap="round" /></svg></button>
+            <form action="/save_plan" id="save" method="post">
+                @csrf
+                <input type="text" name="plan_name" id="" placeholder="The name of your travel plan">
+            
+                <button class="dashboard__plans__list__button" type="submit" form="save">Save <svg width="32" height="32" viewBox="0 0 32 32"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.0002 15.9166H5.3335M16.0002 26.1389V15.9166V26.1389ZM16.0002 15.9166V5.69443V15.9166ZM16.0002 15.9166H26.6668H16.0002Z"
+                            stroke="white" stroke-width="1.33333" stroke-linecap="round" /></svg></button>
+            </form>
+
             @endif
         </div>
     </div>

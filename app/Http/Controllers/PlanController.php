@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Destination;
 use App\Models\DestinationCategory;
+use App\Models\PlanHeader;
+use App\Models\PlanDetail;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Foreach_;
 
 class PlanController extends Controller
 {
@@ -39,11 +42,50 @@ class PlanController extends Controller
             $curr_plan = $request->session()->get('destinations');
         }
 
-        array_push($curr_plan, $request->destination_id);
-        
+        if(!array_search($request->destination_id, $curr_plan)){
+            array_push($curr_plan, $request->destination_id);
+        } 
 
         $request->session()->put('destinations', $curr_plan);
 
         return redirect('/');
+    }
+
+    public function addPlan(Request $request){
+
+        
+        $validate = $request->validate([
+            'plan_name' => ['required', 'unique:plan_headers']
+        ]);
+        
+        // dd(1);
+        $new_plan = new PlanHeader();
+
+        $new_plan->plan_name = $validate['plan_name'];
+        $new_plan->user_id = auth()->user()->id;
+
+        $new_plan->save();
+
+        $curr_plan = $request->session()->get('destinations');
+
+        foreach($curr_plan as $dest){
+
+            $plan_id = PlanHeader::where('plan_name', $new_plan->plan_name)
+                ->where('user_id', $new_plan->user_id)
+                ->first();
+
+            $new_dest = new PlanDetail();
+
+            $new_dest->plan_id = $plan_id->id;
+            $new_dest->destination_id = $dest;
+
+            $new_dest->save();
+
+        }
+
+        $request->session()->forget('destinations');
+
+        return redirect('/');
+
     }
 }
