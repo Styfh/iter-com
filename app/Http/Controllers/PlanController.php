@@ -88,4 +88,34 @@ class PlanController extends Controller
         return redirect('/');
 
     }
+
+    public function editPlan(Request $request){
+
+        $curr_plan_detail = PlanDetail::where('plan_id', $request->plan_id);
+        $curr_plan_header = PlanHeader::where('id', $request->plan_id);
+
+        $details = $curr_plan_detail->get()
+            ->toArray();
+
+        $plan_name = $curr_plan_header->first()
+            ->plan_name;
+
+        $indexes = [];
+
+        foreach($details as $dest){
+            array_push($indexes, $dest['destination_id']);
+        }
+
+        // dd($plan_name);
+
+        $request->session()->put('destinations', $indexes);
+        $request->session()->put('plan_name', $plan_name);
+
+        // dd($request->session()->get('plan_name'));
+
+        $curr_plan_detail->delete();
+        $curr_plan_header->delete();
+
+        return redirect('/');
+    }
 }

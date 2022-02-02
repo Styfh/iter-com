@@ -23,9 +23,7 @@ class UserController extends Controller
     public function getSavedPage(){
         $user = Auth::user();
 
-        $user_plans = PlanHeader::with("getPlanDetail")
-            ->with('getDestinations')
-            ->where('user_id', $user->id)
+        $user_plans = PlanHeader::where('user_id', $user->id)
             ->get();
 
         // dd($user_plans);

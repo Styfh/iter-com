@@ -72,7 +72,8 @@
             @if(!empty($user_destinations))
             <form action="/save_plan" id="save" method="post">
                 @csrf
-                <input type="text" name="plan_name" id="" placeholder="The name of your travel plan">
+
+                <input type="text" name="plan_name" id="" value="{{ Session::get('plan_name') }}" placeholder="The name of your travel plan">
             
                 <button class="dashboard__plans__list__button" type="submit" form="save">Save <svg width="32" height="32" viewBox="0 0 32 32"
                         fill="none" xmlns="http://www.w3.org/2000/svg">

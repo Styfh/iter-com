@@ -23,8 +23,9 @@
             @if(count($plans))
 
             @foreach ($plans as $plan)
-            <form action="" class="saved-plans__plan">
-              <h3 class="saved-plans__plan__name">$plan->plan_name</h3>
+            <form action="/plan/{{ $plan->id }}" method="get" class="saved-plans__plan">
+              @csrf
+              <h3 class="saved-plans__plan__name">{{$plan->plan_name}}</h3>
               <input type="submit" value="Edit Plan" />
             </form>
             @endforeach
